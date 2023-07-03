@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import CartContent from "./components/CartContent";
 import { useSelector } from "react-redux";
 import Modal from "./components/Modal";
-import { useRef } from "react";
 
 function App() {
   const {

@@ -177,10 +177,19 @@ svg {
 .cart-product-card {
   padding: 10px;
   align-self: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.2s ease-in-out;
 }
 
 .cart-product-image {
   width: 30%;
+}
+
+.cart-total {
+  font-size: 1.3rem;
 }
 
 .product-modal {
