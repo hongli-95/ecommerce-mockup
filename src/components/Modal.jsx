@@ -41,16 +41,18 @@ export default function Modal({ displayModal, product }) {
           <p className="modal-product-title">{product.title}</p>
           <p className="modal-product-category">{product.category}</p>
           <p className="modal-product-description">{product.description}</p>
-          <p>${product.price}</p>
+          <p className="modal-product-price">${product.price}</p>
         </div>
 
-        <button
-          className="add-button"
-          onClick={() => dispatch(addToCart(product))}
-          style={displayModal ? { width: "50%" } : { width: "0" }}
-        >
-          Add to Cart
-        </button>
+        <div className="button-container">
+          <button
+            className="add-button"
+            onClick={() => dispatch(addToCart(product))}
+            style={displayModal ? { width: "50%" } : { width: "0" }}
+          >
+            Add to Cart
+          </button>
+        </div>
       </dialog>
     </div>
   );

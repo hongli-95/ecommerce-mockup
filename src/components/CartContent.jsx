@@ -45,64 +45,36 @@ export default function CartContent({ displayCart, cart, grandTotal }) {
       ) : (
         <div>
           {Object.entries(cart).map((array) => {
-            if (array[1].length < 2) {
-              const currProduct = array[1][0];
-              return (
-                <div key={currProduct.uuid}>
-                  <div
-                    className="cart-product-card"
-                    style={displayCart ? { opacity: 1 } : { opacity: 0 }}
-                  >
-                    <img
-                      src={currProduct.image}
-                      className="cart-product-image"
-                    />
-                    <div className="cart-product-title">
-                      {currProduct.title}
-                    </div>
-                    <div className="cart-product-price">
-                      {currProduct.price}
-                    </div>
-                    <div className="cart-product-quantity">
-                      Quantity: {array[1].length}
-                    </div>
-                    <button onClick={() => removeFromCart(currProduct)}>
+            const currProduct = array[1][0];
+            return (
+              <div key={currProduct.uuid}>
+                <div
+                  className="cart-product-card"
+                  style={displayCart ? { opacity: 1 } : { opacity: 0 }}
+                >
+                  <img src={currProduct.image} className="cart-product-image" />
+                  <div className="cart-product-title">{currProduct.title}</div>
+                  <div className="cart-product-price">{currProduct.price}</div>
+                  <div className="cart-product-quantity">
+                    Quantity: {array[1].length}
+                  </div>
+                  <div className="button-container">
+                    <button
+                      className="cart-delete-button"
+                      onClick={() => removeFromCart(currProduct)}
+                    >
                       Delete
                     </button>
                   </div>
                 </div>
-              );
-            } else {
-              const currProduct = array[1][0];
-              return (
-                <div key={currProduct.uuid}>
-                  <div
-                    className="cart-product-card"
-                    style={displayCart ? { opacity: 1 } : { opacity: 0 }}
-                  >
-                    <img
-                      src={currProduct.image}
-                      className="cart-product-image"
-                    />
-                    <div className="cart-product-title">
-                      {currProduct.title}
-                    </div>
-                    <div className="cart-product-price">
-                      {currProduct.price}
-                    </div>
-                    <div className="cart-product-quantity">
-                      Quantity: {array[1].length}
-                    </div>
-                    <button onClick={() => removeFromCart(currProduct)}>
-                      Delete
-                    </button>
-                  </div>
-                </div>
-              );
-            }
+              </div>
+            );
           })}
-          <div className="cart-total">
-            Your Total is: {grandTotal.toFixed(2)}
+          <div
+            className="cart-total"
+            style={displayCart ? { opacity: 1 } : { opacity: 0 }}
+          >
+            Your Total is: ${grandTotal.toFixed(2)}
           </div>
         </div>
       )}

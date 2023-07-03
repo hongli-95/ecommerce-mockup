@@ -23,11 +23,55 @@ html {
   align-items: center;
 }
 
-.add-button {
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.main .add-button,
+.cart-delete-button,
+.product-modal .button-container .add-button {
   border: none;
   width: 100%;
   height: max-content;
   padding: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.main .add-button::before,
+.cart-delete-button::before,
+.navbar button::before,
+.product-modal .add-button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: red;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.2s ease-in-out;
+  z-index: -1;
+}
+
+.main .add-button:hover::before,
+.cart-delete-button:hover::before,
+.navbar button:hover::before,
+.product-modal .add-button:hover::before {
+  transform: scaleX(1);
+}
+
+.main .add-button:hover,
+.cart-delete-button:hover,
+.navbar button:hover,
+.product-modal .add-button:hover {
+  color: black;
 }
 
 .product-image {
@@ -64,6 +108,18 @@ html {
   margin-bottom: 5px;
 }
 
+.product-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.product-rating svg {
+  width: 100%;
+  height: 100%;
+}
+
 .navbar {
   display: flex;
   justify-content: space-evenly;
@@ -80,28 +136,7 @@ html {
   background: none;
   color: white;
   transition: 0.2s ease-in-out;
-}
-
-.navbar button:hover {
-  color: black;
-}
-
-.navbar button::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: red;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: 0.2s ease-in-out;
-  z-index: -1;
-}
-
-.navbar button:hover::before {
-  transform: scaleX(1);
+  font-size: 1.2rem;
 }
 
 .shopping-cart-container {
@@ -182,6 +217,7 @@ svg {
   flex-direction: column;
   gap: 10px;
   transition: 0.2s ease-in-out;
+  transition-delay: 0.3s;
 }
 
 .cart-product-image {
@@ -190,6 +226,8 @@ svg {
 
 .cart-total {
   font-size: 1.3rem;
+  transition: 0.2s ease-in-out;
+  transition-delay: 0.3s;
 }
 
 .product-modal {
@@ -206,6 +244,7 @@ svg {
   transform-origin: center;
   width: 50%;
   z-index: 2;
+  background: cyan;
 }
 
 .modal-product-info {
@@ -224,7 +263,13 @@ svg {
 }
 
 .modal-product-title {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.modal-product-price {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
 }
 
 .modal-product-category::first-letter {

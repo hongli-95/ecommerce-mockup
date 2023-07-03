@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import ShoppingCart from "../assets/IconShoppingCart";
+import StarIcon from "../assets/IconStarSharp";
 import { useDispatch } from "react-redux";
 import {
   displayCartContent,
@@ -72,15 +73,17 @@ export default function Content({ content, loading, cart, count }) {
             <div className="product-price">${item.price}</div>
 
             <div className="product-rating">
-              {item.rating.rate}{" "}
+              <StarIcon /> {item.rating.rate}{" "}
               <span className="product-rating-count">
                 ({item.rating.count})
               </span>
             </div>
 
-            <button className="add-button" onClick={() => addProduct(item)}>
-              Add to Cart
-            </button>
+            <div className="button-container">
+              <button className="add-button" onClick={() => addProduct(item)}>
+                Add to Cart
+              </button>
+            </div>
           </div>
         ))
       ) : (
