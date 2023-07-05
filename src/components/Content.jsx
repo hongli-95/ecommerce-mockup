@@ -10,6 +10,7 @@ import {
   showModal,
 } from "../features/storeSlice";
 import LoadingIcon from "../assets/IconBxLoaderAlt";
+import HomePage from "./HomePage";
 
 export default function Content({ content, loading, cart, count }) {
   const dispatch = useDispatch();
@@ -87,7 +88,7 @@ export default function Content({ content, loading, cart, count }) {
           </div>
         ))
       ) : (
-        <div>Home Page</div>
+        <HomePage />
       )}
     </div>
   );

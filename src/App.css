@@ -3,6 +3,110 @@ html {
   overflow-y: scroll;
 }
 
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.sale-banner-container {
+  width: 100%;
+  position: relative;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.sale-banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+}
+
+.sale-banner::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: red;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.2s ease-in-out;
+  z-index: -1;
+}
+
+.sale-banner:hover::before {
+  transform: scaleX(1);
+}
+
+.sale-banner:hover .banner-text-s {
+  transform: translateX(-25px) scale(1.3);
+}
+
+.sale-banner:hover .banner-text-a {
+  transform: translateX(-5px) scale(1.3);
+}
+
+.sale-banner:hover .banner-text-l {
+  transform: translateX(20px) scale(1.3);
+}
+
+.sale-banner:hover .banner-text-e {
+  transform: translateX(40px) scale(1.3);
+}
+
+.banner-text {
+  font-size: 4rem;
+  transition: 0.2s ease-in-out;
+}
+
+.homepage-category-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.category-block {
+  background: red;
+  width: 40%;
+  height: 20rem;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.category-block-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.category-block-backdrop p {
+  transition: 0.2s ease-in-out;
+}
+
+.category-block-backdrop:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.category-block-backdrop:hover p {
+  transform: scale(1.1);
+}
+
 .main {
   display: flex;
   justify-content: center;

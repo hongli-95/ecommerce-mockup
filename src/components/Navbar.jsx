@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import {
   getElectronicsProducts,
