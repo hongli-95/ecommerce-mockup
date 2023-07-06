@@ -348,7 +348,6 @@ svg {
   transform-origin: center;
   width: 50%;
   z-index: 2;
-  background: cyan;
 }
 
 .modal-product-info {
