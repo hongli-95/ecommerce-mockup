@@ -197,6 +197,7 @@ html {
   overflow: hidden;
   max-width: 100%;
   white-space: nowrap;
+  text-align: center;
 }
 
 .product-image:hover {
@@ -258,6 +259,7 @@ html {
   justify-content: center;
   align-items: center;
   transition: 0.3s ease-in-out;
+  z-index: 1;
 }
 
 .shopping-cart {
@@ -267,7 +269,7 @@ html {
   width: 50px;
   height: 50px;
   color: white;
-  background: none;
+  background: rgba(0, 0, 0, 0.5);
   border: none;
   cursor: pointer;
   transition: 0.2s ease-in-out;
@@ -294,6 +296,7 @@ svg {
   z-index: 1;
   background: rgba(0, 0, 0, 0.9);
   transition: 0.3s ease-in-out;
+  z-index: 100;
 }
 
 .close-button {
